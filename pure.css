@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  place-items: center;
+  height: 100svh;
+}
+
+#sprite {
+  display: none;
+}
+
+.resize {
+  margin: 0 auto;
+  resize: horizontal;
+  overflow: scroll;
+  border: 1px solid black;
+  width: 50svw;
+  max-height: 80svh;
+  max-width: 90svw;
+  min-width: 150px;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+
+.icon {
+  width: 100%;
+  aspect-ratio: 1/1;
+  max-height: 100%;
+
+  container-type: inline-size;
+
+  @container (max-width: 200px) {
+    --display-watch: block;
+  }
+  @container (min-width: 201px) and (max-width: 400px) {
+    --display-mp4: block;
+  }
+  @container (min-width: 401px) and (max-width: 600px) {
+    --display-mobile: block;
+  }
+  @container (min-width: 601px) and (max-width: 800px) {
+    --display-tablet: block;
+  }
+  @container (min-width: 801px) and (max-width: 1000px) {
+    --display-laptop: block;
+  }
+  @container (min-width: 1001px) and (max-width: 1200px) {
+    --display-desktop: block;
+  }
+  @container (min-width: 1201px) {
+    --display-teli: block;
+  }
+}
